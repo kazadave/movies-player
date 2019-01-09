@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesProviderService } from '../../services/movies-provider.service';
+import { Movies } from 'src/app/interfaces/movies';
 
 @Component({
   selector: 'app-movie-list',
@@ -8,12 +9,17 @@ import { MoviesProviderService } from '../../services/movies-provider.service';
 })
 export class MovieListComponent implements OnInit {
 
+  public movies: Movies = null;
+
   constructor(
-    private movies: MoviesProviderService
+    private moviesProvider: MoviesProviderService
   ) { }
 
   ngOnInit() {
-    this.movies.fetchMovies();
+    this.moviesProvider.fetchMovies()
+    .then((movies: Movies) => {
+      this.movies = movies;
+    });
   }
 
 }
