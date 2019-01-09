@@ -1,28 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { MovieProfileComponent } from './components/movie-profile/movie-profile.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: MovieListComponent
+    component: HomeComponent
   },
   {
     path: 'contact',
     component: ContactComponent
   },
   {
-    path: 'movies/:id',
-    component: MovieProfileComponent
+    path: 'movies',
+    loadChildren: './movie/movie.module#MovieModule'
   }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes,

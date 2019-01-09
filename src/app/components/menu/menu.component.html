@@ -3,12 +3,22 @@
       <li class="nav-item">
           <a
               class="btn btn-secondary"
-              routerLink="home"
+              routerLink=""
               routerLinkActive="btn-success"
+              [routerLinkActiveOptions]="{ exact: true }"
           >
               Home
           </a>
       </li>
+      <li class="nav-item">
+        <a
+            class="btn btn-secondary"
+            routerLink="movies"
+            routerLinkActive="btn-success"
+        >
+            Movies
+        </a>
+    </li>
       <li class="nav-item">
           <a
               class="btn btn-secondary"
@@ -18,5 +28,6 @@
               Contact
           </a>
       </li>
+
   </ul>
 </nav>
