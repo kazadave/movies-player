@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Movies } from '../interfaces/movies';
@@ -7,8 +7,19 @@ import { Movies } from '../interfaces/movies';
   providedIn: 'root'
 })
 export class MoviesProviderService {
+ async search(query: string): Promise<Movies> {
+    const movies: Movies = await this.fetchMovies();
+    return movies.filter((movie) => {
+      const isTitleMatched = new RegExp(query, 'i').test(movie.title);
+      const isDescriptionMatched = new RegExp(query, 'i').test(movie.description);
 
-  constructor(private http: HttpClient) { }
+      return isTitleMatched || isDescriptionMatched;
+    });
+  }
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   fetchMovies() {
     return <Promise<Movies>> this.http.get(environment.moviesURL).toPromise();

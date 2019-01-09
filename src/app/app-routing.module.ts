@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: './movie/movie.module#MovieModule'
+  },
+  {
+    path: 'search',
+    loadChildren: './search/search.module#SearchModule'
   }
 
 ];

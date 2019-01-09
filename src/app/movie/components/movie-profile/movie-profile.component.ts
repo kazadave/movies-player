@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { MoviesProviderService } from 'src/app/movie/services/movies-provider.service';
 import { Movie } from 'src/app/movie/interfaces/movie';
@@ -10,21 +10,11 @@ import { Movie } from 'src/app/movie/interfaces/movie';
 })
 export class MovieProfileComponent implements OnInit {
 
-  movie: Movie = null;
+  @Input() movie: Movie = null;
 
-  constructor(
-    private route: ActivatedRoute,
-    private moviesProvider: MoviesProviderService
-  ) { }
+  constructor() { }
 
  async ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log({ id });
-
-    const movie = await this.moviesProvider.fetchMovieById(id);
-    console.log({ movie });
-
-    this.movie = movie;
   }
 
 }
