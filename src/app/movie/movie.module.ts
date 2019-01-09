@@ -8,6 +8,7 @@ import { MovieProfileComponent } from './components/movie-profile/movie-profile.
 import { PageMovieListComponent } from './components/page-movie-list/page-movie-list.component';
 import { PageMovieProfileComponent } from './components/page-movie-profile/page-movie-profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { MoviesProviderService } from './services/movies-provider.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     MovieListComponent
-  ]
+  ],
+  providers: [MoviesProviderService],
 })
 export class MovieModule { }

@@ -11,7 +11,7 @@ import { filter } from 'rxjs/operators';
 })
 export class PageSearchResultsComponent implements OnInit {
 
-  public movies: Movies = null;
+  movies: Movies = null;
 
   constructor(
     private movieProvider: MoviesProviderService,
@@ -20,6 +20,7 @@ export class PageSearchResultsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.displayResults();
     this.router.events
       .pipe(
         filter((evt) => evt instanceof NavigationEnd)
@@ -30,12 +31,7 @@ export class PageSearchResultsComponent implements OnInit {
   }
   async displayResults() {
     const query = this.route.snapshot.paramMap.get('query');
-    console.log({ query });
-
-    const movies = await this.movieProvider.search(query);
-    console.log({ movies });
-
-    this.movies = movies;
+     this.movies = await this.movieProvider.search(query);
   }
 
 }

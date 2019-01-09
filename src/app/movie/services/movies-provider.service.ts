@@ -7,15 +7,6 @@ import { Movies } from '../interfaces/movies';
   providedIn: 'root'
 })
 export class MoviesProviderService {
- async search(query: string): Promise<Movies> {
-    const movies: Movies = await this.fetchMovies();
-    return movies.filter((movie) => {
-      const isTitleMatched = new RegExp(query, 'i').test(movie.title);
-      const isDescriptionMatched = new RegExp(query, 'i').test(movie.description);
-
-      return isTitleMatched || isDescriptionMatched;
-    });
-  }
 
   constructor(
     private http: HttpClient
@@ -28,6 +19,16 @@ export class MoviesProviderService {
     const movies: Movies = await this.fetchMovies();
     return movies.find((movie) => {
       return movie.id === id;
+    });
+  }
+
+  async search(query: string): Promise<Movies> {
+    const movies: Movies = await this.fetchMovies();
+    return movies.filter((movie) => {
+      const isTitleMatched = new RegExp(query, 'i').test(movie.title);
+      const isDescriptionMatched = new RegExp(query, 'i').test(movie.description);
+
+      return isTitleMatched || isDescriptionMatched;
     });
   }
 }

@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MoviesProviderService } from '../../services/movies-provider.service';
-import { Movies } from 'src/app/movie/interfaces/movies';
 import { Movie } from '../../interfaces/movie';
 
 @Component({

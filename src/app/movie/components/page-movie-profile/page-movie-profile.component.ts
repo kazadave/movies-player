@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Movies } from '../../interfaces/movies';
-import { environment } from 'src/environments/environment';
 import { Movie } from '../../interfaces/movie';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesProviderService } from '../../services/movies-provider.service';
@@ -22,10 +20,7 @@ export class PageMovieProfileComponent implements OnInit {
 
   async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log({id});
     const movie = await this.moviesProvider.fetchMovieById(id);
-    console.log({movie});
-
     this.movie = movie;
   }
 

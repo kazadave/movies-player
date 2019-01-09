@@ -15,7 +15,7 @@ export class SearchFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onEnter(value) {
+  onEnter(value: string) {
     console.log({ value });
     this.router.navigate(['/search', value]);
   }
