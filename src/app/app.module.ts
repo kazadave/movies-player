@@ -8,13 +8,15 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from './shared/shared.module';
+import { UserMenuComponent } from './components/user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    UserMenuComponent
   ],
   imports: [
     BrowserModule,
