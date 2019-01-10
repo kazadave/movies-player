@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: './search/search.module#SearchModule'
+  },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule'
   }
 
 ];
