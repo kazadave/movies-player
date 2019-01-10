@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/user-model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-page-user-registration',
@@ -14,10 +15,27 @@ export class PageUserRegistrationComponent implements OnInit {
   //   email: '',
   //   sex: ''
   // };
-  userModel = new UserModel('kaza', 'email@ema.cd', 'password', 'm');
-  constructor() { }
+  // (change)="email.errors.value = validateEmail()"
+  userModel = new UserModel('kaza', 'emailema.cd', 'password', 'm');
+  url = 'http://localhost:3000';
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
   }
 
+  validateEmail(email: string): boolean {
+    return (/@/).test(email);
+  }
+
+  submit(data) {
+    this.http.post(this.url, data)
+    .subscribe((response) => {
+      console.log('== Success ==');
+      console.log(data);
+    }, (err) => {
+      console.log(err);
+  });
+  }
 }

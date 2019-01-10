@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "predeploy": "ng build --prod --base-href=/test-angular-movies/",
-    "deploy": "gh-pages -d dist/test-angular-movies"
+    "deploy": "DEBUG=gh-pages gh-pages -d dist/test-angular-movies",
+    "dev": "cross-env DEBUG=vavatech:* nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -21,9 +22,13 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
     "debug": "^4.1.1",
+    "express": "^4.16.4",
     "gh-pages": "^2.0.1",
     "intersection-observer": "^0.5.1",
     "rxjs": "~6.3.3",
