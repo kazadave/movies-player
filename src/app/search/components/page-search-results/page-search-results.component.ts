@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesProviderService } from 'src/app/movie/services/movies-provider.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { Movies } from 'src/app/movie/interfaces/movies';
+import { Movies } from 'src/app/movie/interfaces/movies.interface';
 import { filter } from 'rxjs/operators';
 
 @Component({

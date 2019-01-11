@@ -3,6 +3,12 @@
   <!-- <br/>
   <pre>{{ userRegistrationForm.errors | json }}</pre> -->
 </div>
+<div>
+  <p>
+    If you have account
+    <a routerLink="/user/login">Try login</a>
+  </p>
+</div>
 <form #userRegistrationForm="ngForm" class="col-md-7" (ngSubmit)="submit(userRegistrationForm.value)">
   <div class="form-group">
     <label>Username<sup class="text-danger">*</sup></label>

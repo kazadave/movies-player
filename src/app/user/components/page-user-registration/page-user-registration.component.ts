@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from 'src/app/models/user-model';
 import { HttpClient } from '@angular/common/http';
+
+import { UserModel } from 'src/app/user/models/user.model';
 
 @Component({
   selector: 'app-page-user-registration',
