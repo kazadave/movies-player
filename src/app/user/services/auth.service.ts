@@ -11,7 +11,6 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
 export class AuthService {
 
 
-
   constructor(private usersStore: UsersStoreService, private localStorageService: LocalStorageService) { }
 
   authenticate(userCredentials: UserCredentials) {
@@ -24,6 +23,9 @@ export class AuthService {
 
   isUserLogged(): boolean {
     return this.localStorageService.read('user-logged');
+  }
+  destroySession(): any {
+   return this.localStorageService.delete('user-logged');
   }
 
   register(userModel: UserModel) {

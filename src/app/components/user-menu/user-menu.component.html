@@ -3,7 +3,10 @@
   class="navbar-brand"
   routerLink="/"
   >Angular: Movies</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+    *ngIf="!userIsLogged">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link"
@@ -17,5 +20,16 @@
       </li>
 
     </ul>
+  </div>
+  <div
+   class="collapse navbar-collapse"
+    *ngIf="userIsLogged">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"
+          routerLink="/user/logout"
+        > Logout</a>
+      </li>
+      </ul>
   </div>
 </nav>

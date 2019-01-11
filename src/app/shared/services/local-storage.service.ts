@@ -25,7 +25,8 @@ export class LocalStorageService {
 
   }
 
-  delete() {
-
+  delete(key: string) {
+     localStorage.removeItem(key);
+     return true;
   }
 }
