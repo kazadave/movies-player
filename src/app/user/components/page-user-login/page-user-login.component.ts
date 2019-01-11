@@ -53,7 +53,7 @@ export class PageUserLoginComponent implements OnInit {
       // this.password.setValue('aaaaa');
       this.loginFormGroup.setValue({
         email: 'example@com',
-        password: 'password'
+        password: '123komputer'
       });
     }, 1000);
   }

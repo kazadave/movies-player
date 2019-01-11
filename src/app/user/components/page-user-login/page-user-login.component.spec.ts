@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageUserLoginComponent } from './page-user-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageUserLoginComponent', () => {
   let component: PageUserLoginComponent;
@@ -8,6 +11,7 @@ describe('PageUserLoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule, SharedModule, RouterTestingModule],
       declarations: [ PageUserLoginComponent ]
     })
     .compileComponents();

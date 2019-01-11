@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageMovieProfileComponent } from './page-movie-profile.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { PageMovieListComponent } from '../page-movie-list/page-movie-list.component';
+import { MovieProfileComponent } from '../movie-profile/movie-profile.component';
+import { MovieListComponent } from '../movie-list/movie-list.component';
+import { MovieListItemComponent } from '../movie-list-item/movie-list-item.component';
 
 describe('PageMovieProfileComponent', () => {
   let component: PageMovieProfileComponent;
@@ -8,7 +15,8 @@ describe('PageMovieProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageMovieProfileComponent ]
+      imports: [SharedModule, RouterTestingModule, HttpClientModule],
+      declarations: [ PageMovieProfileComponent, MovieProfileComponent, MovieListComponent, MovieListItemComponent ]
     })
     .compileComponents();
   }));

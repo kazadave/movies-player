@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageUserLogoutComponent } from './page-user-logout.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PageUserLogoutComponent', () => {
   let component: PageUserLogoutComponent;
@@ -8,6 +9,7 @@ describe('PageUserLogoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [ PageUserLogoutComponent ]
     })
     .compileComponents();
